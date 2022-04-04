@@ -1,0 +1,19 @@
+extends base.pug 
+
+block content 
+    .container-fluid.mt-4
+        .row    
+            .col-2.p-0
+               include side.pug
+            .col-10
+                h4.mt-2 Inbox
+                table.table.table-sm.small
+                    //- each mail in mails
+                        tr 
+                            td=mail.senderId.fname
+                            td
+                                a(href=`/view/${mail._id}`).text-decoration-none.text-dark
+                                    strong=mail.subject
+                                    span.small.fw-lighter.ms-2=mail.content 
+                            td=mail.date
+                

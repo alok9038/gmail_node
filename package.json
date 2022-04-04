@@ -1,0 +1,24 @@
+{
+  "name": "gmail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "express-dynamic-helpers-patch": "0.0.2",
+    "express-flash": "0.0.2",
+    "express-group-routes": "^1.1.0",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "mongoose": "^6.2.9",
+    "nodemon": "^2.0.15",
+    "pug": "^3.0.2"
+  }
+}

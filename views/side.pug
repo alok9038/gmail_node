@@ -1,0 +1,31 @@
+//- style. 
+//-         .active
+//-             background-color: #fce8e6!important;
+//-             color: #d93025;
+//-             box-shadow:1px 2px 3px black;
+a.btn.btn-white.btn-lg.w-75.m-2.rounded-pill.shadow-sm.border(href="#composeModal",data-bs-toggle="modal") Compose
+.list-group.mt-3.px-0.small.rounded-0
+    a.list-group-item.list-group-item-action.border-0(class=(name == 'inbox' ? 'active' : ""),style="border-radius:0px 15px 15px 0px", href="/inbox") Inbox
+        span.float-end (#{countInbox})  
+    a.list-group-item.list-group-item-action.border-0(class=(name === 'outbox' ? "active" : ""),style="border-radius:0px 15px 15px 0px", href="/outbox") Outbox
+        span.float-end (#{countOutbox})   
+    a.list-group-item.list-group-item-action.border-0(style="border-radius:0px 15px 15px 0px", href="/draft") Draft
+        //- span.float-end (#{countDraft})      
+    a.list-group-item.list-group-item-action.border-0(style="border-radius:0px 15px 15px 0px", href="/trash") Trash
+        //- span.float-end (#{countTrash})  
+
+.modal.fade#composeModal 
+    .modal-dialog
+        .modal-content 
+            .modal-header Send Mail 
+            .modal-body 
+                form(action="/compose",method="post")
+                    .mb-3 
+                        input.form-control(type="text",placeholder="To.",name="to") 
+                    .mb-3 
+                        input.form-control(type="text",placeholder="Subject",name="subject")
+                    .mb-3 
+                        textarea(name="content", cols="30", rows="10").form-control
+                    .mb-3   
+                        input.btn.btn-success.float-end(type="submit",value="Send")                        
+                        input.btn.btn-info.me-2.float-end(type="submit",value="Save to Draft" name="save")
