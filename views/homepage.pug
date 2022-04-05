@@ -4,23 +4,25 @@ block content
     .container.mt-2
         .row 
             .col-7
-                .container-fluid(style="background-color:var(--bs-gray-300)").text-dark.p-3
-                    h2.display-6 Welcome in New Gmail 
-                    h6 100% free create, your can connection with anyone worldwide
-                    p.small Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, dignissimos labore veritatis officia cupiditate, eius ipsum repellendus nemo molestiae quisquam ea nam cum magni voluptatibus nesciunt. Quibusdam repudiandae in alias?
+                .container-fluid.text-dark.p-3
+                    h2.display-6.text-center.mt-3 Welcome in New Gmail 
+                    h6.text-center.fw-light.h5 All  of  Google,  working  for  you
+                    //- p.small Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, dignissimos labore veritatis officia cupiditate, eius ipsum repellendus nemo molestiae quisquam ea nam cum magni voluptatibus nesciunt. Quibusdam repudiandae in alias?
+                    video(autoplay="" data-loop-start-time="3" muted="" playsinline="" poster="https://lh3.googleusercontent.com/V_7OwlanMRJ-q6EjzbH_PmLHdnuuPXmqRKzlPd6svygPwZDhqQYdf5f9xJvGJ76lUkPkyJ05_uZzsqM2fZUbRBppesccc_ZHFdYPSg" width="100%")
+                        source(src="https://kstatic.googleusercontent.com/files/d5553d3151e70c8fd38595ac93798a78eb9bf137e68dec3afd5115f7b3296050fd10eaf3148b3c8bc1e044eb363c6877c83867007cebf57cd718e0151de647f3" type="video/mp4")
 
             .col-5 
-                .card 
+                .card(style="border-radius:20px")
                     .card-body 
-                        h6.lead.mb-0 Create An Account 
-                        p.small.mb-0 100% free 
+                        h6.h4.fw-light.mb-0.text-center Create An Account 
+                        p.small.mb-0.text-center.small ( 100% free  )
                         hr
-                        //- if (messages.info)
-                        //-     .alert.alert-info
-                        //-         span= messages.info
-                        //- if (messages.danger)
-                        //-     .alert.alert-danger
-                        //-         span= messages.danger
+                        if (messages.info)
+                            .alert.alert-info
+                                span= messages.info
+                        if (messages.danger)
+                            .alert.alert-danger
+                                span= messages.danger
                         form(action="", method="post")
                             .row 
                                 .mb-3.col
@@ -43,17 +45,19 @@ block content
                                 .mb-3.col 
                                     label(for="") Date of Birth 
                                     input.form-control(type="date",name="dob")
-                            .row 
-                                .mb-3.col.d-flex
-                                    .m-1 
-                                        input(type="radio",name="gender" ,value="male").form-check-input.me-1 
-                                        label(for="").form-check-label male 
-                                    .m-1 
-                                        input(type="radio",name="gender",value="female").form-check-input.me-1  
-                                        label(for="").form-check-label female 
-                                    .m-1 
-                                        input(type="radio",name="gender",value="other").form-check-input.me-1 
-                                        label(for="").form-check-label other
+                             
+                                .mb-3.col
+                                    label(for="") Gender 
+                                    .d-flex 
+                                        .m-1 
+                                            input(type="radio",name="gender" ,value="male").form-check-input.me-1 
+                                            label(for="").form-check-label male 
+                                        .m-1 
+                                            input(type="radio",name="gender",value="female").form-check-input.me-1  
+                                            label(for="").form-check-label female 
+                                        .m-1 
+                                            input(type="radio",name="gender",value="other").form-check-input.me-1 
+                                            label(for="").form-check-label other
                             .row 
                                 .mb-3.col
                                     label(for="") Password 
@@ -62,5 +66,5 @@ block content
                                     label(for="") confirm Password 
                                     input.form-control(type="password",name="cnf_password")
                             .row 
-                                input.btn.btn-success.w-100(type="submit")
+                                input.btn.btn-primary.w-100(type="submit")
                                  

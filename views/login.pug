@@ -1,13 +1,15 @@
 extends base.pug
 
 block content 
-    .container.mt-2
+    .container.mt-3
         .row 
-            .col-5.mx-auto 
-                .card 
-                    .card-body 
-                        h6.lead.mb-0 Login Here
-                        p.small.mb-0 All fields are Required
+            .col-4.p-3.pt-5
+                h2.fw-light.text-center Your  Google  starts  here
+                img(src="https://lh3.googleusercontent.com/rlSRvsQruVgzB6ki1pwgrVtz9vDNBX1nzzRthFtvkiecN3zksupzRanQTUKSZalT9yaglCxlcYKb2evJaN7IlC9kQNkuZR9fsgcwjg", alt="ba", style="height:300px; width:300px ").mt-3.mx-auto.justify-content-center.d-flex
+            .col-5.mx-auto.mt-5
+                .card(style="border-radius:15px") 
+                    .card-body.p-4
+                        h6.h3.fw-light.text-center.mb-0 Login Here
                         hr
                         form(action="/login", method="post")
                             .row 
@@ -19,5 +21,6 @@ block content
                                     label(for="") Password 
                                     input.form-control(type="password",name="password")
                             .row 
-                                input.btn.btn-success.w100(type="submit",name="send",value="Login Here")
+                                input.btn.btn-primary.w100(type="submit",name="send",value="Login Here")
+                        a(href="/", class="float-end text-decoration-none mt-2") i'm new 
                                  

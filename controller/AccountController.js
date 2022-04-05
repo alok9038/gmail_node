@@ -4,7 +4,6 @@ const { redirect } = require("express/lib/response");
 
 
 const HomePage = (req, res) => {
-    console.log(session.user)
     return res.render('homepage');
 }
 
@@ -20,7 +19,6 @@ const loginAction = async(req,res) => {
     }
     else{
         req.flash("danger","username or password is Incorrect");
-        console.danger('username or password is incorrect')
     }
 }
 
@@ -28,7 +26,6 @@ const Signup = async (req,res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       req.flash("danger","something went wrong")
-    console.danger('something went wrong')
       res.redirect("/");
     }
     if(req.body.password === req.body.cnf_password) {

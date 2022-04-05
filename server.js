@@ -7,6 +7,7 @@ var session =require("express-session");
 var urLencoded = bodyParser.urlencoded({extended:false})
 require("express-dynamic-helpers-patch")(app);
 var path = require('path')
+
 app.dynamicHelpers({session:function(req,res){
     return req.session;
 }})
